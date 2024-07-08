@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        /* Reset some default styles */
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dbdbdb;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #1b1b1b;
+            color: #fff;
+            overflow: hidden;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .navbar-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+        }
+
+        .navbar-item {
+            margin-left: 20px;
+        }
+
+        .navbar-links {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background 0.3s;
+        }
+
+        .navbar-links:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        /* Centering the chatbot area */
+        .chatbot-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px);
+        }
+
+        /* Chatbot area styles */
+        .chatbot-area {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .chatbot-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .chatbot-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            margin-bottom: 5px;
+            text-align: right;
+            color: #333;
+        }
+
+        .bot-message {
+            margin-bottom: 5px;
+            color: #007bff;
+        }
+
+        .chatbot-input {
+            width: calc(100% - 20px);
+            margin-top: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .send-button {
+            width: calc(100% - 20px);
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .send-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="http://127.0.0.1:8000/" class="navbar-brand">Ask Me</a>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="http://127.0.0.1:8000/" class="navbar-links">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-links">About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-links">Services</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-links">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Centering the chatbot area -->
+    <div class="chatbot-wrapper">
+        <div class="chatbot-area">
+            <div class="chatbot-title">Chatbot</div>
+            
+            <form method="POST" action="chatbot">
+                {% csrf_token %}
+                <input type="text" name="user_input" id="user-input" class="chatbot-input" placeholder="Type your message..."><br><br>
+                <div class="chatbot-messages" id="chatbot-messages">
+                    <div class="bot-message">{{ response }}</div>
+                </div>
+                <button type="submit" class="send-button">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+    
+    <!-- <script>
+        // Function to handle sending messages
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            var chatbotMessages = document.getElementById("chatbot-messages");
+
+            // Append user message to chatbot messages
+            var userMessageElement = document.createElement("div");
+            userMessageElement.classList.add("user-message");
+            userMessageElement.textContent = userInput;
+            chatbotMessages.appendChild(userMessageElement);
+
+            // Clear user input field
+            document.getElementById("user-input").value = "";
+
+            // Simulate chatbot response (replace with actual chatbot logic)
+            setTimeout(function() {
+                var botMessageElement = document.createElement("div");
+                botMessageElement.classList.add("bot-message");
+                botMessageElement.textContent = "I'm just a placeholder. Replace me with real chatbot logic!";
+                chatbotMessages.appendChild(botMessageElement);
+            }, 500);
+        }
+    </script> -->
+</body>
+</html>
