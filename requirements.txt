@@ -8,12 +8,12 @@ Automat==22.10.0
 beautifulsoup4==4.12.3
 cachetools==5.3.2
 certifi==2024.2.2
-cffi==1.16.0
-charset-normalizer==3.3.2
+cffi==1.14.6
+charset-normalizer
 click==8.1.7
 colorama==0.4.6
 constantly==23.10.4
-contourpy==1.1.0
+contourpy==1.2.0
 cryptography==42.0.5
 cssselect==1.2.0
 cycler==0.12.1
@@ -44,7 +44,7 @@ libclang==16.0.6
 lxml==5.2.1
 Markdown==3.6
 MarkupSafe==2.1.5
-matplotlib==3.8.2
+matplotlib==3.4.2
 ml-dtypes==0.2.0
 multidict==6.0.5
 nltk==3.8.1
@@ -82,7 +82,7 @@ soupsieve==2.5
 sqlparse==0.4.4
 tensorboard==2.15.1
 tensorboard-data-server==0.7.2
-tensorflow==2.15.0
+tensorflow==2.5.0
 tensorflow-estimator==2.15.0
 tensorflow-intel==2.15.0
 tensorflow-io-gcs-filesystem==0.31.0
